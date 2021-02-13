@@ -9,6 +9,6 @@ package model.pojo;
  *
  * @author LAPTOPVTC.VN
  */
-public class Admin {
+public class Admin extends Person{
     
 }

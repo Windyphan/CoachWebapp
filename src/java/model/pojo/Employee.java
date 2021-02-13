@@ -9,6 +9,20 @@ package model.pojo;
  *
  * @author LAPTOPVTC.VN
  */
-public class Employee {
+public class Employee extends Person {
+    private float rate;
+
+    public float getRate() {
+        return rate;
+    }
+
+    public void setRate(float rate) {
+        this.rate = rate;
+    }
+    
+    
+    
+    
     
 }
+

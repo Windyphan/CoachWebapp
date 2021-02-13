@@ -9,6 +9,6 @@ package model.pojo;
  *
  * @author LAPTOPVTC.VN
  */
-public class Coach {
+public class Coach extends Employee{
     
 }

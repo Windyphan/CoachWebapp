@@ -10,5 +10,34 @@ package model.pojo;
  * @author LAPTOPVTC.VN
  */
 public class Billing {
+    private int bId;
+    private Operation op;
+    private float charge;
+
+    public int getbId() {
+        return bId;
+    }
+
+    public void setbId(int bId) {
+        this.bId = bId;
+    }
+
+    public Operation getOp() {
+        return op;
+    }
+
+    public void setOp(Operation op) {
+        this.op = op;
+    }
+
+    public float getCharge() {
+        return charge;
+    }
+
+    public void setCharge(float charge) {
+        this.charge = charge;
+    }
+    
     
 }
+
