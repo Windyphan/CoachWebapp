@@ -4,14 +4,95 @@
     Author     : LAPTOPVTC.VN
 --%>
 
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="model.pojo.Billing"%>
+<%@page import="java.util.ArrayList"%>
+
+
+
+<%
+    ArrayList<String[]> billings = new ArrayList<String[]>();
+    if (request.getAttribute("billings") == null) {
+        response.sendRedirect("/Documents");
+    } else {
+        billings = (ArrayList<String[]>) request.getAttribute("billings");
+    }
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<jsp:include page="/viewer/Header.jsp"/>
+
+<div class="MainContent">
+
+    <h3>Invoices</h3>
+    <%
+        if (request.getAttribute("date-select-error") != null) {
+            out.print("<h3 style=\"color: red\">Chosen dates not valid. Try again.</h3>");
+        }
+        if (request.getAttribute("date-from") != null) {
+            out.print("<h3 style=\"color: #59B259\">Invoice within " + request.getAttribute("date-from") 
+                    + " to " + request.getAttribute("date-to") + "</h3>");
+        }
+        %>
+    <form action="/Information" method="post">
+        <div style="display: flex ; flex-direction:row">
+            <div style="display: flex ; flex-direction:column">
+                <div>Date from:<input type="date" name="datefrom"/></div></br>
+                <div>Date to<input type="date" name="dateto"/></div></br>
+
+            </div>
+            <div class="staff-buttons" style="margin-left: 50px; margin-top: 20px"> <input type="submit" name="billing-month" value="Ok"/></div>
+        </div>
+
+
+    </form>
+    <form class="FormTable">
+        <table id="doc-table">
+            <tr id="doc-inf">
+                <th>Employee</th>
+                <th><center>Patient</center></th>
+            <th><center>Schedule Type</center></th>
+            <th><center>Consultation Rate</center></th>
+            <th><center>Slots</center></th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Charge</th>
+            <!--<th style="width: 9%" >Rate (&#163;/slot)</th>-->
+            <!--                <th style="width: 10%">New Rate (&#163;/slot)</th>-->
+            <!--                <th style="width: 10%">Authorzied</th>-->
+            </tr>
+            <%
+                if (billings.size() == 0) {
+                    out.print("<tr><td colspan=\"7\">No record available.</td></tr>");
+                } else {
+                    for (String[] bill : billings) {
+                        String inputClass = "";
+
+                        out.print("<tr class=\"" + inputClass + "\">");
+                        out.print("<td><center>" + bill[0] + "</center></td>");
+                        out.print("<td><center>" + bill[1] + "</center></td>");
+                        out.print("<td><center>" + bill[2] + "</center></td>");
+                        out.print("<td><center>" + bill[3] + "</center></td>");
+                        out.print("<td><center>" + bill[4] + "</center></td>");
+                        out.print("<td><center>" + bill[5] + "</center></td>");
+                        out.print("<td><center>" + bill[6] + "</center></td>");
+                        out.print("<td><center>" + bill[7] + "</center></td>");
+
+                        out.print("</tr>");
+                    }
+                }
+            %>
+        </table>
+
+
+
+
+
+
+    </form>
+</div>
+<jsp:include page="/viewer/Footer.jsp"/>
