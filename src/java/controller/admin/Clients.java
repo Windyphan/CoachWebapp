@@ -10,7 +10,7 @@ package controller.admin;
  * @author LAPTOPVTC.VN
  */
 
-import dao.BillingDao;
+import dao.BillingDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -19,12 +19,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.ClientDAO;
-import dao.UserDao;
-import dao.OperationDao;
+import dao.UserDAO;
+import dao.OperationDAO;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import model.dbHandler.DBBean;
+import model.DBHandler.DBBean;
 import model.pojo.Client;
 import model.pojo.Operation;
 
@@ -58,9 +58,9 @@ public class Clients extends HttpServlet {
                     request.getRequestDispatcher("/viewer/admin/Clients.jsp").forward(request, response);
                 } else {
                     int changedCount = paramSize - 1;
-                    BillingDao billingDao = new BillingDao(con);
-                    OperationDao operationDao = new OperationDao(con);
-                    UserDao userDao = new UserDao(con);
+                    BillingDAO billingDao = new BillingDAO(con);
+                    OperationDAO operationDao = new OperationDAO(con);
+                    UserDAO userDao = new UserDAO(con);
 
                     for (int i = 0; i < paramSize - 1; i++) {
                         int cliId = Integer.parseInt(keySet[i].replaceAll("client-", "")); // get client id from parameter

@@ -14,7 +14,7 @@ import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import model.dbHandler.DBBean;
+import model.DBHandler.DBBean;
 import model.pojo.Client;
 import model.pojo.Employee;
 import model.pojo.Operation;

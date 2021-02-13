@@ -11,7 +11,7 @@ package dao;
  */
 
 import java.sql.Connection;
-import model.dbHandler.DBBean;
+import model.DBHandler.DBBean;
 
 public class DAO {
     private DBBean db;

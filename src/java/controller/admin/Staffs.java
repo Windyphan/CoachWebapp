@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.pojo.Employee;
-import dao.EmployeeDao;
+import dao.EmployeeDAO;
 import java.util.Set;
 
 public class Staffs extends HttpServlet {
@@ -30,7 +30,7 @@ public class Staffs extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             Connection con = (Connection) getServletContext().getAttribute("con");
-            EmployeeDao employeeDao = new EmployeeDao(con);
+            EmployeeDAO employeeDao = new EmployeeDAO(con);
 
             HttpSession session = request.getSession();
             ArrayList<Employee> staffs = employeeDao.getAllEmployees();
@@ -41,7 +41,7 @@ public class Staffs extends HttpServlet {
                 ArrayList<String[]> curStates = employeeDao.getFormChanges(staffs);
                 
                 session.setAttribute("curentStaffStates", curStates);
-                request.getRequestDispatcher("/viewer/admin/Staff.jsp").forward(request, response);
+                request.getRequestDispatcher("/viewer/admin/Staffs.jsp").forward(request, response);
             }
             // confirm button clicked
             else {                
@@ -71,7 +71,7 @@ public class Staffs extends HttpServlet {
                 
 
                 if (newChanges.isEmpty()) { // if there's no changes send back
-                    request.getRequestDispatcher("/viewer/admin/Staff.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/admin/Staffs.jsp").forward(request, response);
                 } else {
                     // update db
                     for (String[] user : newChanges) 
@@ -85,7 +85,7 @@ public class Staffs extends HttpServlet {
                     session.setAttribute("curentStaffStates", curStates);
                     
                     request.setAttribute("newChanges", newChanges);
-                    request.getRequestDispatcher("/viewer/admin/Staff.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/admin/Staffs.jsp").forward(request, response);
                 }
             }
         }

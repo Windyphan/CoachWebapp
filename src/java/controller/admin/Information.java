@@ -10,8 +10,8 @@ package controller.admin;
  * @author LAPTOPVTC.VN
  */
 
-import dao.BillingDao;
-import dao.OperationDao;
+import dao.BillingDAO;
+import dao.OperationDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -25,7 +25,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.dbHandler.DBBean;
+import model.DBHandler.DBBean;
 import model.pojo.Billing;
 import model.pojo.Operation;
 
@@ -53,7 +53,7 @@ public class Information extends HttpServlet {
             Connection con = (Connection) getServletContext().getAttribute("con");
             db.connect(con);
 
-            OperationDao opeDao = new OperationDao(con);
+            OperationDAO opeDao = new OperationDAO(con);
 
             if (request.getParameter("billing-month") == null || (request.getParameter("dateto") == null && request.getParameter("datefrom") == null)) {
                 ArrayList<Operation> operations = opeDao.getAllSchedulePassedNotCancelled();
@@ -79,7 +79,7 @@ public class Information extends HttpServlet {
                     request.setAttribute("date-select-error", "wrong");
                     request.setAttribute("billings", arrOfBills);
 
-                    request.getRequestDispatcher("/viewer/admin/Documents.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/admin/Information.jsp").forward(request, response);
                 }
                 else {
                     String dateto = request.getParameter("dateto");
@@ -95,7 +95,7 @@ public class Information extends HttpServlet {
                     request.setAttribute("date-to", dateto);
                     request.setAttribute("date-from", request.getParameter("datefrom"));
 
-                    request.getRequestDispatcher("/viewer/admin/Documents.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/admin/Information.jsp").forward(request, response);
                 }               
                 
             }
@@ -103,7 +103,7 @@ public class Information extends HttpServlet {
     }
 
     public ArrayList<String[]> getScheduleAsStringArr(ArrayList<Operation> operations, Connection con) {
-        BillingDao billingDao = new BillingDao(con);
+        BillingDAO billingDao = new BillingDAO(con);
         ArrayList<String[]> arrOfBills = new ArrayList<String[]>();
         for (Operation ope : operations) {
             int SID = ope.getId();

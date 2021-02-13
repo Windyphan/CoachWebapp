@@ -9,7 +9,7 @@ package controller.login;
  *
  * @author LAPTOPVTC.VN
  */
-import dao.EntryDao;
+import dao.EntryDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -36,7 +36,7 @@ public class Signup extends HttpServlet {
 
             if (password.equals(password_repeat)) {
                 Connection con = (Connection) getServletContext().getAttribute("con");
-                EntryDao entryDao = new EntryDao(con);
+                EntryDAO entryDao = new EntryDAO(con);
                 
                 boolean isTaken = entryDao.unameTaken(username);
                 if (isTaken) {
@@ -59,13 +59,13 @@ public class Signup extends HttpServlet {
                         response.sendRedirect("/Login.html");
                     else {
                         out.print("<small class=\"Error Error-Signup\">There's been some error. Please try again later.</small>");
-                        request.getRequestDispatcher("/SignUp.html").include(request, response);
+                        request.getRequestDispatcher("/Signup.html").include(request, response);
                     }       
                 }               
             } 
             else {
                 out.print("<small class=\"Error Error-Signup\">Confirmation Password is Incorrect</small>");
-                request.getRequestDispatcher("/SignUp.html").include(request, response);
+                request.getRequestDispatcher("/Signup.html").include(request, response);
             }
 
         }

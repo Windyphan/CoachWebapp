@@ -14,7 +14,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import model.pojo.Employee;
-import model.dbHandler.DBBean;
+import model.DBHandler.DBBean;
 
 /**
  *

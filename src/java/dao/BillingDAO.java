@@ -12,7 +12,7 @@ package dao;
 
 import java.sql.Connection;
 import java.util.ArrayList;
-import model.dbHandler.DBBean;
+import model.DBHandler.DBBean;
 import model.pojo.Billing;
 import model.pojo.Operation;
 

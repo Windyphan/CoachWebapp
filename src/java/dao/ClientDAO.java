@@ -9,10 +9,9 @@ package dao;
  *
  * @author LAPTOPVTC.VN
  */
-package dao;
 
 import model.pojo.Client;
-import model.dbHandler.DBBean;
+import model.DBHandler.DBBean;
 import java.sql.Connection;
 import java.util.ArrayList;
 

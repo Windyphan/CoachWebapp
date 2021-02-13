@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.pojo.Client;
-import dao.EntryDao;
+import dao.EntryDAO;
 
 /**
  *
@@ -42,12 +42,12 @@ public class Signup_Client extends HttpServlet {
 //             if passwords are the same
             if (password.equals(password_repeat)) {   
                 Connection con = (Connection) getServletContext().getAttribute("con");  
-                EntryDao entryDao = new EntryDao(con);
+                EntryDAO entryDao = new EntryDAO(con);
 
                 boolean isTaken = entryDao.unameTaken(username);    // check if username is taken
                 if (isTaken) {
                     out.print("<small class=\"Error Error-Signup\">This Username is Already Taken</small>");
-                    request.getRequestDispatcher("/SignUpClient.html").include(request, response);
+                    request.getRequestDispatcher("/Signup_Client.html").include(request, response);
                 }
                 else {
                     System.out.println("Uname NOT taken");
@@ -65,13 +65,13 @@ public class Signup_Client extends HttpServlet {
                         response.sendRedirect("/Login.html");
                     else {
                         out.print("<small class=\"Error Error-Signup\">There's been some error. Please try again later.</small>");
-                        request.getRequestDispatcher("/SignUpClient.html").include(request, response);
+                        request.getRequestDispatcher("/Signup_Client.html").include(request, response);
                     }                    
                 }                    
 
             } else {
                 out.print("<small class=\"Error Error-Signup\">Confirmation Password is Incorrect</small>");
-                request.getRequestDispatcher("/SignUpClient.html").include(request, response);
+                request.getRequestDispatcher("/Signup_Client.html").include(request, response);
                 // .include(), NOT .forward(), to print the error message
             }
         }

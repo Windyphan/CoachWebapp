@@ -10,9 +10,9 @@ package controller.admin;
  * @author LAPTOPVTC.VN
  */
 
-import dao.BillingDao;
-import dao.EmployeeDao;
-import dao.OperationDao;
+import dao.BillingDAO;
+import dao.EmployeeDAO;
+import dao.OperationDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -33,8 +33,8 @@ public class Staffs_Schedule extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             Connection con = (Connection) getServletContext().getAttribute("con");
-            EmployeeDao employeeDao = new EmployeeDao(con);
-            OperationDao operationDao = new OperationDao(con);
+            EmployeeDAO employeeDao = new EmployeeDAO(con);
+            OperationDAO operationDao = new OperationDAO(con);
 
             HttpSession session = request.getSession();
             ArrayList<Employee> staffs = employeeDao.getAllEmployees();
@@ -49,7 +49,7 @@ public class Staffs_Schedule extends HttpServlet {
                 request.setAttribute("schedule", schedule);
                 session.setAttribute("current-emp", "all");
                 
-                request.getRequestDispatcher("/viewer/admin/StaffSchedule.jsp").forward(request, response);
+                request.getRequestDispatcher("/viewer/admin/Staffs_Schedule.jsp").forward(request, response);
             } // if admin chose a specific employee
             else if (request.getParameter("see-schedule") != null) {
                 String empId = request.getParameter("staff-name");  // the emplopyee that admin chose
@@ -63,7 +63,7 @@ public class Staffs_Schedule extends HttpServlet {
                 session.setAttribute("current-emp", empId);
                 out.print(session.getAttribute("current-emp"));
 
-                request.getRequestDispatcher("/viewer/admin/StaffSchedule.jsp").forward(request, response);
+                request.getRequestDispatcher("/viewer/admin/Staffs_Schedule.jsp").forward(request, response);
             } // if admin confirm cancel operation
             else if (request.getParameter("confirm-cancel") != null) {
                 int paramSize = request.getParameterMap().keySet().size();
@@ -81,11 +81,11 @@ public class Staffs_Schedule extends HttpServlet {
 
                     request.setAttribute("schedule", schedule);
                     request.setAttribute("changes-made", new ArrayList<Integer>());
-                    request.getRequestDispatcher("/viewer/admin/StaffSchedule.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/admin/Staffs_Schedule.jsp").forward(request, response);
                 } 
                 else {
                     ArrayList<Integer> changed_ids = new ArrayList<Integer>();
-                    BillingDao billingDao = new BillingDao(con);
+                    BillingDAO billingDao = new BillingDAO(con);
 
                     for (int i = 0; i < paramSize - 1; i++) {
                         String opId = keySet[i].replaceAll("cancel-", "");
@@ -103,7 +103,7 @@ public class Staffs_Schedule extends HttpServlet {
 
                     request.setAttribute("schedule", schedule);
                     request.setAttribute("changes-made", changed_ids);
-                    request.getRequestDispatcher("/viewer/admin/StaffSchedule.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/admin/Staffs_Schedule.jsp").forward(request, response);
 
                 }
             }

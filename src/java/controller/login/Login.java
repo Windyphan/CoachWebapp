@@ -10,7 +10,7 @@ package controller.login;
  * @author LAPTOPVTC.VN
  */
 
-import dao.EntryDao;
+import dao.EntryDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             Connection con = (Connection) getServletContext().getAttribute("con");
 
-            EntryDao entryDao = new EntryDao(con);
+            EntryDAO entryDao = new EntryDAO(con);
 
             // get user token from cookie
             Cookie[] cookies = request.getCookies();
