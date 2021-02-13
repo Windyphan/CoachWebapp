@@ -10,9 +10,9 @@ package controller.Clients;
  * @author LAPTOPVTC.VN
  */
 
-import dao.BillingDao;
+import dao.BillingDAO;
 import dao.ClientDAO;
-import dao.OperationDao;
+import dao.OperationDAO;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class Manage_Appointment extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
             /* TODO output your page here. You may use following sample code. */
             Connection con = (Connection) getServletContext().getAttribute("con");
-            OperationDao operationDao = new OperationDao(con);
+            OperationDAO operationDao = new OperationDAO(con);
             ClientDAO clientDao = new ClientDAO(con);
             
 
@@ -46,7 +46,7 @@ public class Manage_Appointment extends HttpServlet {
 
                 request.setAttribute("schedule", schedule);
 
-                request.getRequestDispatcher("/viewer/client/ManageAppointment.jsp").forward(request, response);
+                request.getRequestDispatcher("/viewer/client/Manage_Appointment.jsp").forward(request, response);
             } 
             // if client confirm cancel operation
             else if (request.getParameter("confirm-cancel") != null) {
@@ -57,11 +57,11 @@ public class Manage_Appointment extends HttpServlet {
                 if (paramSize == 1) {   // only the submit button
                     System.out.print("Only submit button");
                     request.setAttribute("changes-made", new ArrayList<Integer>());
-                    request.getRequestDispatcher("/viewer/client/ManageAppointment.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/client/Manage_Appointment.jsp").forward(request, response);
                 } 
                 else {
                     ArrayList<Integer> changed_ids = new ArrayList<Integer>();
-                    BillingDao billingDao = new BillingDao(con);
+                    BillingDAO billingDao = new BillingDAO(con);
 
                     for (int i=0; i < paramSize-1; i++){
                         String opId = keySet[i].replaceAll("cancel-", "");
@@ -75,7 +75,7 @@ public class Manage_Appointment extends HttpServlet {
 
                     request.setAttribute("schedule", schedule);
                     request.setAttribute("changes-made", changed_ids);
-                    request.getRequestDispatcher("/viewer/client/ManageAppointment.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/client/Manage_Appointment.jsp").forward(request, response);
 
 
                 }

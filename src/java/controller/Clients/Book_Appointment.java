@@ -11,8 +11,8 @@ package controller.clients;
  */
 
 import dao.ClientDAO;
-import dao.EmployeeDao;
-import dao.OperationDao;
+import dao.EmployeeDAO;
+import dao.OperationDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -33,7 +33,7 @@ import model.pojo.Employee;
 import model.pojo.Operation;
 
 
-@WebServlet(name = "BookAppointment", urlPatterns = {"/BookAppointment"})
+@WebServlet(name = "Book_Appointment", urlPatterns = {"/Book_Appointment"})
 public class Book_Appointment extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -45,15 +45,15 @@ public class Book_Appointment extends HttpServlet {
             //connect DAO
             Connection con = (Connection) getServletContext().getAttribute("con");
             ClientDAO clientDao = new ClientDAO(con);
-            EmployeeDao employeeDao = new EmployeeDao(con);
-            OperationDao operationDao = new OperationDao(con);
+            EmployeeDAO employeeDao = new EmployeeDAO(con);
+            OperationDAO operationDao = new OperationDAO(con);
 
             ArrayList<Employee> staffsList = employeeDao.getAllEmployees();
             session.setAttribute("staffs", staffsList);
 
             // load data for the first time
             if (request.getParameter("booking-submit") == null) {
-                request.getRequestDispatcher("/viewer/client/BookAppointment.jsp").forward(request, response);
+                request.getRequestDispatcher("/viewer/client/Book_Appointment.jsp").forward(request, response);
             } else {
                 //get input data
                 String staffid = request.getParameter("staff-required").trim();
@@ -71,7 +71,7 @@ public class Book_Appointment extends HttpServlet {
                 // compareTo returns -1/0/1 if less/equal/greater
                 if (bookDate.compareTo(today) != 1) {
                     request.setAttribute("date-select-error", "wrong");
-                    request.getRequestDispatcher("/viewer/client/BookAppointment.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/client/Book_Appointment.jsp").forward(request, response);
                 }
                 else {
                     //get require staff data
@@ -91,10 +91,10 @@ public class Book_Appointment extends HttpServlet {
 
                     boolean res = operationDao.addAppointment(operation);
                     if (res) {
-                        response.sendRedirect("/viewer/client/ManageAppointment.jsp");
+                        response.sendRedirect("/viewer/client/Manage_Appointment.jsp");
                     } else {
                         out.print("<small class=\"Error Error-Booking\">There's been some error. Please try again later.</small>");
-                        request.getRequestDispatcher("/viewer/client/BookAppointment.jsp").include(request, response);
+                        request.getRequestDispatcher("/viewer/client/Book_Appointment.jsp").include(request, response);
                     }
                 }
 
