@@ -30,8 +30,8 @@
         <servlet-class>controller.Login.Logout</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SignUpClient</servlet-name>
-        <servlet-class>controller.Login.SignUpClient</servlet-class>
+        <servlet-name>Signup_Client</servlet-name>
+        <servlet-class>controller.Login.Signup_Client</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Staff</servlet-name>
@@ -42,8 +42,8 @@
         <servlet-class>controller.admin.Information</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SignUp</servlet-name>
-        <servlet-class>controller.Login.SignUp</servlet-class>
+        <servlet-name>Signup</servlet-name>
+        <servlet-class>controller.Login.Signup</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Clients</servlet-name>
@@ -78,20 +78,20 @@
         <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SignUpClient</servlet-name>
-        <url-pattern>/SignUpClient</url-pattern>
+        <servlet-name>Signup_Client</servlet-name>
+        <url-pattern>/Signup_Client</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Staff</servlet-name>
         <url-pattern>/Staff</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Documents</servlet-name>
-        <url-pattern>/Documents</url-pattern>
+        <servlet-name>Information</servlet-name>
+        <url-pattern>/Information</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SignUp</servlet-name>
-        <url-pattern>/SignUp</url-pattern>
+        <servlet-name>Signup</servlet-name>
+        <url-pattern>/Signup</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Clients</servlet-name>

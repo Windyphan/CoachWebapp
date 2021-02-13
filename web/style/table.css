@@ -61,7 +61,7 @@ table#client-table tr{
     border: none;
     background-color: #E1E8F6;
     border-radius: 5px;
-    outline-color: lightblue;
+    outline-color: orangered;
     text-align: right;
     padding: 2px 5px;    
 }
@@ -251,7 +251,7 @@ table#client-table tr{
 
 .staff-postcode-search > button{
     border: none;
-    background-color: lightblue;
+    background-color: orangered;
     border-radius: 3px;
     outline: none;
     width: fit-content;
