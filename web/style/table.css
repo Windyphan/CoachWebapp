@@ -1,0 +1,316 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 13, 2021, 3:41:54 AM
+    Author     : LAPTOPVTC.VN
+*/
+.data-num {
+    font-style: italic;
+    color: forestgreen;
+}
+
+.FormTable table {
+    margin-top: 30px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.FormTable th {
+    text-align: center;
+    background-color: lightseagreen;
+    color: white;
+}
+
+.FormTable td, .FormTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr.changed {
+    background-color: lightgreen;  
+}
+#doc-table tr{
+    width: 200px;
+    text-align:center;
+}
+table#client-table tr{
+    width: 200px;
+    text-align:center;
+}
+#cancel-surgery td:nth-child(4),
+#staff-table td:nth-child(6){
+    text-align: right;
+}
+
+.FormTable td:first-child,
+.FormTable td:last-child,
+#staff-table td:nth-child(5),
+#staff-table td:nth-child(7){
+    text-align: center;
+}
+
+#staff-table td:nth-child(5){
+    text-transform: capitalize;
+}
+
+#staff-table input[type="number"] {
+    width: 85px;
+    border: none;
+    background-color: #E1E8F6;
+    border-radius: 5px;
+    outline-color: lightblue;
+    text-align: right;
+    padding: 2px 5px;    
+}
+
+/*.FormTable input[type="submit"]{
+    margin: 20px auto 0;
+    display: block;
+    width: 150px;
+    font-size: 20px;
+    background-color: #59B259;    
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    text-transform: uppercase;
+}*/
+
+.FormTable .staff-buttons {
+    margin: 30px auto 0;
+    display: table;
+    font-size: 18px;
+}
+
+.staff-buttons *{
+    width: 150px;
+    background-color: #59B259;    
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.staff-buttons button {
+    background-color: lightgrey;
+    margin-right: 30px;
+    outline: none;
+}
+
+#patientList {
+    border-collapse: collapse;
+    display :grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+
+}
+#patientList>div{
+    border: 1px solid #ddd;
+
+    text-align: center;
+    background-color: #54BEE3;
+    color: white;
+
+    /*padding: 8px;*/
+
+}
+#patientItem{
+    border-collapse: collapse;
+    display :grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+#patientItem>div{
+    border: 1px solid #ddd;
+
+
+}
+.invoiceDetail>div{
+    text-align: center;
+    background-color: #54BEE3;
+    color: white;
+
+}
+#billingList{
+    border-collapse: collapse;
+    display :grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+#billingList>div{
+    border: 1px solid #ddd;
+    background-color: #54BEE3;
+    color: white;
+    /*padding: 8px;*/
+
+}
+#billingInfoList{
+    border-collapse: collapse;
+
+    display :grid;
+    grid-template-columns: 33% 33% 33% ;
+}
+#billingInfoList>div{
+    border: 1px solid #ddd;
+}
+
+
+/* Staff Schedule Page Table  */
+
+.instructions {
+    margin-top: 30px;
+}
+
+.instructions p {
+    margin-bottom: 0;
+    display: list-item;
+    margin-left: 20px;
+}
+
+#choose-staff {
+    margin-top: 30px;
+}
+
+#choose-staff label {
+    width: 130px
+}
+
+#choose-staff select {
+    padding: 5px;
+    outline: none;
+    border-radius: 3px;
+}
+
+#choose-staff input[type="submit"] {
+    margin-left: 20px;
+    width: 130px;
+    outline: none;
+    border: none;
+    background-color: #0c8a82;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#schedule-table td:nth-child(5),
+#schedule-table td:nth-child(6),
+#schedule-table td:nth-child(7) {
+    text-align: center
+}
+
+#schedule-table tr.passed {
+    background-color: #e3e3e3
+}
+
+#schedule-table tr.changed {
+    background-color: lightgreen;
+}
+
+#confirm-cancel-btn {
+    text-transform: uppercase;
+    font-size: large;
+    padding: 7px 20px;
+    width: 135px;
+    outline: none;
+    border: none;
+    background-color: #58B358;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    border-radius: 5px;
+    color: white;
+}
+
+.changes-made {
+    color: red;
+    font-size: 1.3em;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #ED5650;
+    padding: 5px 50px;
+    border-radius: 5px;
+    color: white;
+    margin-top: 30px;
+}
+
+
+/***** Staff page table*/
+
+.staff-postcode-search {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.staff-postcode-search > input {
+    width: 70%;
+}
+
+.staff-postcode-search > button{
+    border: none;
+    background-color: lightblue;
+    border-radius: 3px;
+    outline: none;
+    width: fit-content;
+    padding: 3px 15px;
+    margin-left: 10%
+}
+
+.address-select {
+    width: 95%;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.book-result {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 15px 50px;
+    border-radius: 5px;
+    color: white;
+}
+
+.book-result.success {
+    background-color: #59B259;
+
+}
+
+.book-result.failed {
+    background-color: #D2504D;
+
+}
+
+.book-result > p{
+    margin: 0;
+}
+
+.book-surgery-form {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.book-surgery-form .form-item {
+    margin-bottom: 30px;
+}
+
+.book-surgery-form .book-surgery-submit{
+    position: relative;
+}
+
+.book-surgery-form input[type="submit"] {
+    width: 100px;
+    outline: none;
+    background-color: #58BAD7;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
