@@ -10,8 +10,8 @@ package dao;
  * @author LAPTOPVTC.VN
  */
 
-import com.HashPassword;
-import com.UserToken;
+import com.Hash_Password;
+import com.User_Token;
 import java.sql.Connection;
 import model.pojo.Client;
 import model.pojo.User;
@@ -47,7 +47,7 @@ public class EntryDAO extends DAO {
     }
 
     public String[] formLogin(User user, boolean isRemember) {
-        String hasedPw = new HashPassword().hashPassword(user.getPassword());    // hash password
+        String hasedPw = new Hash_Password().hashPassword(user.getPassword());    // hash password
         String[][] record = db.getRecords(String.format("SELECT role, authorized FROM APP.USERS WHERE uname='%s' AND passwd='%s'", user.getUsername(), hasedPw));
 
         if (record.length == 0) {
@@ -83,8 +83,8 @@ public class EntryDAO extends DAO {
 
     // signup client
     public boolean signUpClient(Client client) {
-        String token = new UserToken().generateToken();     // user token
-        String hashedPW = new HashPassword().hashPassword(client.getPassword()); // hash password
+        String token = new User_Token().generateToken();     // user token
+        String hashedPW = new Hash_Password().hashPassword(client.getPassword()); // hash password
 
         // insert new user to 'users' table
         boolean inserted = db.insertUser(new String[]{client.getUsername(), hashedPW, "client", "true", token});
@@ -107,8 +107,8 @@ public class EntryDAO extends DAO {
     
     // signup staff
     public boolean signUpStaff(Employee employee) {
-        String token = new UserToken().generateToken();     // user token
-        String hashedPW = new HashPassword().hashPassword(employee.getPassword()); // hash password
+        String token = new User_Token().generateToken();     // user token
+        String hashedPW = new Hash_Password().hashPassword(employee.getPassword()); // hash password
 
         // insert new user to 'users' table
         boolean inserted = db.insertUser(new String[]{employee.getUsername(), 
