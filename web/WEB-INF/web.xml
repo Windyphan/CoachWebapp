@@ -33,7 +33,7 @@
         <servlet-class>controller.entry.Signup_Client</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Staff</servlet-name>
+        <servlet-name>Staffs</servlet-name>
         <servlet-class>controller.admin.Staffs</servlet-class>
     </servlet>
     <servlet>
@@ -65,16 +65,16 @@
         <servlet-class>controller.doctor.IssuePrescription</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>BookAppointment</servlet-name>
+        <servlet-name>Book_Appointment</servlet-name>
         <servlet-class>controller.client.Book_Appointment</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ManageAppointment</servlet-name>
+        <servlet-name>Manage_Appointment</servlet-name>
         <servlet-class>controller.client.Manage_Appointment</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>StaffSchedule</servlet-name>
-        <servlet-class>controller.admin.StaffSchedule</servlet-class>
+        <servlet-name>Staffs_Schedule</servlet-name>
+        <servlet-class>controller.admin.Staffs_Schedule</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RequestPrescription</servlet-name>
