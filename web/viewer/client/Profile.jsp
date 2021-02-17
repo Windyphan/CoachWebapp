@@ -39,7 +39,7 @@
 <div class="MainContent">   
     <div class="Forms" id="change-info-forms">        
         <div id="change-info">
-            <form method="post" action="/Information">
+            <form method="post" action="/Profile">
                 <div class="form-item">
                     <label>Your Client ID</label>
                     <input type="text" name="user-id" value="<%=id%>" disabled />

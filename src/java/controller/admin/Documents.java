@@ -33,7 +33,7 @@ import model.pojo.Operation;
  *
  * @author Admin
  */
-public class Information extends HttpServlet {
+public class Documents extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -79,7 +79,7 @@ public class Information extends HttpServlet {
                     request.setAttribute("date-select-error", "wrong");
                     request.setAttribute("billings", arrOfBills);
 
-                    request.getRequestDispatcher("/viewer/admin/Information.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/admin/Documents.jsp").forward(request, response);
                 }
                 else {
                     String dateto = request.getParameter("dateto");
@@ -95,7 +95,7 @@ public class Information extends HttpServlet {
                     request.setAttribute("date-to", dateto);
                     request.setAttribute("date-from", request.getParameter("datefrom"));
 
-                    request.getRequestDispatcher("/viewer/admin/Information.jsp").forward(request, response);
+                    request.getRequestDispatcher("/viewer/admin/Documents.jsp").forward(request, response);
                 }               
                 
             }
@@ -137,7 +137,7 @@ public class Information extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ParseException ex) {
-            Logger.getLogger(Information.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Documents.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -155,7 +155,7 @@ public class Information extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ParseException ex) {
-            Logger.getLogger(Information.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Documents.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
