@@ -16,7 +16,7 @@
     String[] addresses = new String[]{"Hello there", "This is just a test, This is just a test, This is just a test, This is just a test"};
 
     if (session.getAttribute("staffs") == null) {
-        response.sendRedirect("/Staff");
+        response.sendRedirect("/Staffs");
     } else {
         staffs = (ArrayList<Employee>) session.getAttribute("staffs");
         if (request.getAttribute("newChanges") != null) {
@@ -41,7 +41,7 @@
 
 <div class="MainContent">
 
-    <h3>There are <span class="data-num"><%=staffs.size()%></span> employee(s) in SmartCare.</h3>
+    <h3>There are <span class="data-num"><%=staffs.size()%></span> employee(s) in PMP.</h3>
     
     <%
         if (hasChange) 
@@ -58,7 +58,7 @@
         <p>Once addresses have been found, choose one and click 'Confirm' to submit.</p>
         <p>An employee's rate cannot go beyond &#163;100/slot .</p>
     </div>
-    <form action="/Staff" method="get" class="FormTable" onsubmit="return confirm('Do you really want to make these changes?');">
+    <form action="/Staffs" method="get" class="FormTable" onsubmit="return confirm('Do you really want to make these changes?');">
         <table id="staff-table">
             <tr>
                 <th style="width: 7%" >Staff ID</th>

@@ -20,7 +20,7 @@
 <!DOCTYPE html>
 <jsp:include page="/viewer/Header.jsp"/>
 <div class="MainContent">
-    <h3>There are <span class="data-num"><%=clients.size()%></span> client(s) in SmartCare.</h3>
+    <h3>There are <span class="data-num"><%=clients.size()%></span> client(s) in PMP.</h3>
     <%
         if (request.getAttribute("changes-made") != null) {
             changesMade = (String) request.getAttribute("changes-made");

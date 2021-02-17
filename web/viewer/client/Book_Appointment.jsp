@@ -4,6 +4,19 @@
     Author     : LAPTOPVTC.VN
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.pojo.Employee"%>
+<%@page import="java.time.LocalDate"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%ArrayList<Employee> staffs = new ArrayList<Employee>();%>
+<%
+    if (session.getAttribute("staffs") == null)
+        response.sendRedirect("/BookAppointment");
+    else {
+        staffs = (ArrayList<Employee>) session.getAttribute("staffs");
+    }
+%>
 <!DOCTYPE html>
 <jsp:include page="/viewer/Header.jsp"/>
 
@@ -42,7 +55,7 @@
                 <th>Number of slot(s)
                     <input required type="number" class="form-control" name="slot" min="1" max="6"/>
                 </th>
-                <th>Decription
+                <th>Description
                     <textarea required class="form-control" name="description"></textarea>
                 </th>
             </tr>

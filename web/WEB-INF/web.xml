@@ -29,7 +29,7 @@
         <servlet-class>controller.entry.Logout</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SignUpClient</servlet-name>
+        <servlet-name>Signup_Client</servlet-name>
         <servlet-class>controller.entry.Signup_Client</servlet-class>
     </servlet>
     <servlet>
@@ -41,7 +41,7 @@
         <servlet-class>controller.admin.Documents</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SignUp</servlet-name>
+        <servlet-name>Signup</servlet-name>
         <servlet-class>controller.entry.Signup</servlet-class>
     </servlet>
     <servlet>
@@ -49,20 +49,8 @@
         <servlet-class>controller.admin.Clients</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>PostcodeLookup</servlet-name>
-        <servlet-class>controller.common.PostcodeLookup</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>Profile</servlet-name>
         <servlet-class>controller.client.Profile</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>BookSurgery</servlet-name>
-        <servlet-class>controller.doctor.BookSurgery</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>IssuePrescription</servlet-name>
-        <servlet-class>controller.doctor.IssuePrescription</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Book_Appointment</servlet-name>
@@ -75,14 +63,6 @@
     <servlet>
         <servlet-name>Staffs_Schedule</servlet-name>
         <servlet-class>controller.admin.Staffs_Schedule</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RequestPrescription</servlet-name>
-        <servlet-class>controller.client.RequestPrescription</servlet-class>
-    </servlet>
-     <servlet>
-        <servlet-name>ViewPrescription</servlet-name>
-        <servlet-class>controller.client.ViewPrescription</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Test</servlet-name>
@@ -117,20 +97,8 @@
         <url-pattern>/Clients</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>PostcodeLookup</servlet-name>
-        <url-pattern>/PostcodeLookup</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>Profile</servlet-name>
         <url-pattern>/Profile</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>BookSurgery</servlet-name>
-        <url-pattern>/BookSurgery</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>IssuePrescription</servlet-name>
-        <url-pattern>/IssuePrescription</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Book_Appointment</servlet-name>
@@ -143,14 +111,6 @@
     <servlet-mapping>
         <servlet-name>Staffs_Schedule</servlet-name>
         <url-pattern>/Staffs_Schedule</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RequestPrescription</servlet-name>
-        <url-pattern>/RequestPrescription</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ViewPrescription</servlet-name>
-        <url-pattern>/ViewPrescription</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
