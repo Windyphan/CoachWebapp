@@ -21,7 +21,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    String title = "SmartCare - " + (String) session.getAttribute("fullName");
+    String title = "PMP - " + (String) session.getAttribute("fullName");
     String folderUrl = (String) session.getAttribute("folderUrl");
     String fullName = (String) session.getAttribute("fullName");
     String role = (String) session.getAttribute("role");
@@ -98,7 +98,7 @@
                 <footer class="page-footer">
                     <!--Copyright--> 
                     <div class="footer-copyright text-center py-3">©2021 Copyright:
-                        Hue Nguyen - Bao Bui - Phong Phan - Biao Shen - Au Dam
+                         Phong Phan 
                     </div>
                 </footer>
             </nav>
