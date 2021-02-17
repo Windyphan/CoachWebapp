@@ -18,55 +18,75 @@
     </listener>
     <servlet>
         <servlet-name>Test</servlet-name>
-        <servlet-class>model.DBHandler.Test</servlet-class>
+        <servlet-class>model.DBHandler.test</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>controller.Login.Login</servlet-class>
+        <servlet-class>controller.entry.Login</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Logout</servlet-name>
-        <servlet-class>controller.Login.Logout</servlet-class>
+        <servlet-class>controller.entry.Logout</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Signup_Client</servlet-name>
-        <servlet-class>controller.Login.Signup_Client</servlet-class>
+        <servlet-name>SignUpClient</servlet-name>
+        <servlet-class>controller.entry.Signup_Client</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Staff</servlet-name>
-        <servlet-class>controller.admin.Staff</servlet-class>
+        <servlet-class>controller.admin.Staffs</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Information</servlet-name>
+        <servlet-name>Documents</servlet-name>
         <servlet-class>controller.admin.Documents</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Signup</servlet-name>
-        <servlet-class>controller.Login.Signup</servlet-class>
+        <servlet-name>SignUp</servlet-name>
+        <servlet-class>controller.entry.Signup</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Clients</servlet-name>
         <servlet-class>controller.admin.Clients</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Information</servlet-name>
-        <servlet-class>controller.Clients.Profile</servlet-class>
+        <servlet-name>PostcodeLookup</servlet-name>
+        <servlet-class>controller.common.PostcodeLookup</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Book_Appointment</servlet-name>
-        <servlet-class>controller.Clients.Book_Appointment</servlet-class>
+        <servlet-name>Profile</servlet-name>
+        <servlet-class>controller.client.Profile</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Manage_Appointment</servlet-name>
-        <servlet-class>controller.Clients.Manage_Appointment</servlet-class>
+        <servlet-name>BookSurgery</servlet-name>
+        <servlet-class>controller.doctor.BookSurgery</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Staffs_Schedule</servlet-name>
-        <servlet-class>controller.admin.Staffs_Schedule</servlet-class>
+        <servlet-name>IssuePrescription</servlet-name>
+        <servlet-class>controller.doctor.IssuePrescription</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BookAppointment</servlet-name>
+        <servlet-class>controller.client.Book_Appointment</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManageAppointment</servlet-name>
+        <servlet-class>controller.client.Manage_Appointment</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StaffSchedule</servlet-name>
+        <servlet-class>controller.admin.StaffSchedule</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RequestPrescription</servlet-name>
+        <servlet-class>controller.client.RequestPrescription</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>ViewPrescription</servlet-name>
+        <servlet-class>controller.client.ViewPrescription</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>test</servlet-name>
-        <url-pattern>/test</url-pattern>
+        <servlet-name>Test</servlet-name>
+        <url-pattern>/Test</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -81,12 +101,12 @@
         <url-pattern>/Signup_Client</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Staff</servlet-name>
-        <url-pattern>/Staff</url-pattern>
+        <servlet-name>Staffs</servlet-name>
+        <url-pattern>/Staffs</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Information</servlet-name>
-        <url-pattern>/Information</url-pattern>
+        <servlet-name>Documents</servlet-name>
+        <url-pattern>/Documents</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Signup</servlet-name>
@@ -97,8 +117,20 @@
         <url-pattern>/Clients</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Information</servlet-name>
-        <url-pattern>/Information</url-pattern>
+        <servlet-name>PostcodeLookup</servlet-name>
+        <url-pattern>/PostcodeLookup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Profile</servlet-name>
+        <url-pattern>/Profile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BookSurgery</servlet-name>
+        <url-pattern>/BookSurgery</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IssuePrescription</servlet-name>
+        <url-pattern>/IssuePrescription</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Book_Appointment</servlet-name>
@@ -111,6 +143,14 @@
     <servlet-mapping>
         <servlet-name>Staffs_Schedule</servlet-name>
         <url-pattern>/Staffs_Schedule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RequestPrescription</servlet-name>
+        <url-pattern>/RequestPrescription</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewPrescription</servlet-name>
+        <url-pattern>/ViewPrescription</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
