@@ -5,11 +5,6 @@
  */
 package controller.login;
 
-/**
- *
- * @author LAPTOPVTC.VN
- */
-
 import dao.EntryDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,6 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.pojo.User;
 
+/**
+ *
+ * @author Jamie + Bao Bui
+ */
 public class Login extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -102,18 +101,25 @@ public class Login extends HttpServlet {
                         userPic += "admin.png";
                         break;
                     case "client":
-                        pages = new String[]{"Book Appointment", "Manage Appointment"};
-                        pagesIcons = new String[] {"calendar-plus", "calendar-alt"};
-                        pagesDescription = new String[] {"Book a New Appointment", "Manage Your Upcoming Schedule"};
+                        pages = new String[]{"Book Appointment", "Manage Appointment", "Request Prescription", "View Prescription"};
+                        pagesIcons = new String[] {"calendar-plus", "calendar-alt", "prescription-bottle-alt",  "prescription-bottle"};
+                        pagesDescription = new String[] {"Book a New Appointment", "Manage Your Upcoming Schedule",
+                            "Request a new Prescription from your Doctor", "View Approved Prescription from the Doctor"};
                         userPic += "client.png";
                         break;
-                    case "coach":
-                        pages = new String[]{"See Schedule"};
-                        pagesIcons = new String[] {"calendar-alt"};
-                        pagesDescription = new String[] {"Manage Your Upcoming Schedule"};
-                        userPic += "coach.jpg";
+                    case "doctor":
+                        pages = new String[]{"See Schedule", "Issue Prescription", "Forward Patient", "Book Surgery"};
+                        pagesIcons = new String[] {"calendar-alt", "prescription-bottle-alt", "hospital-user", "syringe"};
+                        pagesDescription = new String[] {"Manage Your Upcoming Schedule", "Issue Requested Prescriptions",
+                            "Forward a Patient to another Hospital", "Book Surgery for a Patient"};
+                        userPic += "doctor.jpg";
                         break;
-                   
+                    case "nurse":
+                        pages = new String[]{"See Schedule", "Issue Prescription"};
+                        pagesIcons = new String[] {"calendar-alt", "prescription-bottle-alt"};
+                        pagesDescription = new String[] {"Manage Your Upcoming Schedule", "Issue Requested Prescriptions"};
+                        userPic += "nurse.jpg";
+                        break;
                     default:
                         pages = new String[]{};
                         pagesIcons = new String[] {};
@@ -178,4 +184,3 @@ public class Login extends HttpServlet {
     }// </editor-fold>
 
 }
-
