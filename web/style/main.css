@@ -38,8 +38,8 @@ a:focus {
 }
 
 .navbar .btn {
-    outline-color: #6838EA;
-    background-color: #6838EA ;
+    outline-color: #ea5c38;
+    background-color: #ea5c38 ;
     color: white;
     box-shadow: none;
 }
@@ -92,7 +92,7 @@ a:focus {
     left: 0;
     width: 230px;
     height: 100vh;
-    background-image: linear-gradient( #6937EA 0%, #377FEA 65%);
+    background-image: linear-gradient( #ea5c38 0%, #ea8237 65%);
     color: #fff;
     transition: all 0.3s;
     z-index: 999;    
@@ -205,7 +205,7 @@ i, span {
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background-color: #6b54ff ;
+    background-color: #ea5c38 ;
 }
 
 a[data-toggle="collapse"] {

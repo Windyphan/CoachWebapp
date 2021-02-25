@@ -12,7 +12,7 @@
     - The content of the navigaton bar is dependant on the user role
     - For logged in user, the session should set relevant attributes like: 
         + user full name,
-        + user role (client/doctor/nurse/admin), 
+        + user role (client/admin), 
         + title of the page, 
         + the jsp folder url ("/viewer/client" or "/viewer/admin/", etc
         + the jsp dashboard page list
@@ -21,7 +21,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    String title = "PMP - " + (String) session.getAttribute("fullName");
+    String title = "CMS - " + (String) session.getAttribute("fullName");
     String folderUrl = (String) session.getAttribute("folderUrl");
     String fullName = (String) session.getAttribute("fullName");
     String role = (String) session.getAttribute("role");
@@ -50,7 +50,7 @@
             <nav id="sidebar">
                 <div class="sidebar-header">
                     <a href="/viewer/Home.jsp">
-                        <img class="brand-logo" src="/assets/logo/caduceus.png"/><h4 class="BrandName">SMART CARE</h4>
+                        <img class="brand-logo" src="/assets/logo/caduceus.png"/><h4 class="BrandName">CMS</h4>
                         <img class="brand-logo sm" src="/assets/logo/caduceus.png"/>
                     </a>
                 </div>

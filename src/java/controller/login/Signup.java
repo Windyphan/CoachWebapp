@@ -65,7 +65,7 @@ public class Signup extends HttpServlet {
             } 
             else {
                 out.print("<small class=\"Error Error-Signup\">Confirmation Password is Incorrect</small>");
-                request.getRequestDispatcher("/Signup.html").include(request, response);
+                request.getRequestDispatcher("//Signup.html").include(request, response);
             }
 
         }

@@ -49,7 +49,7 @@
         <p>Cancellation of an operation is <em style="color: red">final</em>.</p>
         <p>Click on the cancel box next to each operation and click confirm to cancel it.</p>
     </div>
-    <form action="/Staffs_Schedule" class="FormTable" method="post">
+    <form action="//Staffs_Schedule" class="FormTable" method="post">
         <div id="choose-staff">
             <label>Choose Staff: </label>
             <select name="staff-name" required>
@@ -69,7 +69,7 @@
 
 
 
-    <form action="/Staffs_Schedule" class="FormTable" method="post" onsubmit="return confirm('Are you sure you want to make these changes?')">
+    <form action="//Staffs_Schedule" class="FormTable" method="post" onsubmit="return confirm('Are you sure you want to make these changes?')">
         <table id="schedule-table"> 
             <tr>
                 <th style="width: 9%" >Schedule ID</th>

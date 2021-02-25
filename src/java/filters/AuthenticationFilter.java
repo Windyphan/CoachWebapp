@@ -69,21 +69,21 @@ public class AuthenticationFilter implements Filter {
             chain.doFilter(request, response);
         } 
         // if cookie is available, and on the way to login using token, continue
-        else if (uri.equals("/Login") && tokenCk != null) {
+        else if (uri.equals("//Login") && tokenCk != null) {
             chain.doFilter(request, response);
         } 
         // if cookie is available, go to Login servlet to login using token
         else if (uri.equals("/") && tokenCk != null && session == null) {
-            res.sendRedirect("/Login");
+            res.sendRedirect("//Login");
         } 
         // coming out of Login servlet, after login using token, continue to Home.jsp
         else if (uri.equals("/") && tokenCk != null && session != null) {
             chain.doFilter(request, response);
         } 
         // if no session and the uri is not for login or signup processes, redirect
-        else if (session == null && !(uri.equals("/Login.html") || uri.equals("/Login")
-                || uri.equals("/Signup_Client.html") || uri.equals("/Signup_Client")
-                || uri.equals("/Signup.html") || uri.equals("/Signup"))) {
+        else if (session == null && !(uri.equals("/Login.html") || uri.equals("//Login")
+                || uri.equals("/Signup_Client.html") || uri.equals("//Signup_Client")
+                || uri.equals("/Signup.html") || uri.equals("//Signup"))) {
             this.context.log("Unauthorized access request");
             res.sendRedirect("/Login.html");
         } 

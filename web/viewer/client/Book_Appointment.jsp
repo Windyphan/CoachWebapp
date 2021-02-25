@@ -30,7 +30,7 @@
         }
         %>
     
-    <form action="/Book_Appointment" method="post" class="FormTable">
+    <form action="//Book_Appointment" method="post" class="FormTable">
         <table id="book-appointment">
             <tr>
                 <th>Staff require <br>

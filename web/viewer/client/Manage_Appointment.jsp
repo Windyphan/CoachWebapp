@@ -46,7 +46,7 @@
         <p>Click on the cancel box next to each operation and click confirm to cancel it.</p>
     </div>
     <body>
-       <form action="/Manage_Appointment" class="FormTable" method="post" onsubmit="return confirm('Are you sure you want to make these changes?')">
+       <form action="//Manage_Appointment" class="FormTable" method="post" onsubmit="return confirm('Are you sure you want to make these changes?')">
         <table id="schedule-table"> 
             <tr>
                 <th style="width: 12%">Type</th>

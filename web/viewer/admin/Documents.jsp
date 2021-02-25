@@ -38,7 +38,7 @@
                     + " to " + request.getAttribute("date-to") + "</h3>");
         }
         %>
-    <form action="/Information" method="post">
+    <form action="//Documents" method="post">
         <div style="display: flex ; flex-direction:row">
             <div style="display: flex ; flex-direction:column">
                 <div>Date from:<input type="date" name="datefrom"/></div></br>
